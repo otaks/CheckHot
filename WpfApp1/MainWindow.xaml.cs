@@ -39,8 +39,8 @@ namespace WpfApp1 {
         private async void button_Click(object sender, RoutedEventArgs e) {
             innerList.Clear();
             listBox.Items.Clear();
-            await Task.Run(() => {UpdateList("http://live.nicovideo.jp/recent?tab=common#/start_time/desc/1"); });
-            await Task.Run(() => { UpdateList("http://live.nicovideo.jp/recent?tab=common#/start_time/desc/2"); });
+            await UpdateList("http://live.nicovideo.jp/recent?tab=common#/start_time/desc/1");
+            await UpdateList("http://live.nicovideo.jp/recent?tab=common#/start_time/desc/2"); 
 
             innerList.ForEach(item => {
                 listBox.Items.Add(item.Title + "\n" + item.AudienceNum + "\n" + item.CommentNum);
