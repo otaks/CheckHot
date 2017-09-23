@@ -31,17 +31,19 @@ namespace WpfApp1 {
         }
 
         private static List<Chann> innerList = new List<Chann>();
+        private static List<Chann> tmpList = new List<Chann>(); //N回目追加分
 
         public MainWindow() {
             InitializeComponent();
         }
 
         private async void button_Click(object sender, RoutedEventArgs e) {
-            innerList.Clear();
             listBox.Items.Clear();
+            tmpList.Clear();
             await UpdateList("http://live.nicovideo.jp/realtimerecentonairstreams?sort=start_time&tab=common&page=1&order=desc&tags=&tk");
-            await UpdateList("http://live.nicovideo.jp/realtimerecentonairstreams?sort=start_time&tab=common&page=2&order=desc&tags=&tk"); 
+            await UpdateList("http://live.nicovideo.jp/realtimerecentonairstreams?sort=start_time&tab=common&page=2&order=desc&tags=&tk");
 
+            innerList.InsertRange(0, tmpList);
             innerList.ForEach(item => {
                 listBox.Items.Add(item.Title + "\n" + item.AudienceNum + "\n" + item.CommentNum);
             });
@@ -70,14 +72,14 @@ namespace WpfApp1 {
 
             listItems.ToList().ForEach(item => {
                 if (item.Title != "@") {
-                    innerList.Add(item);
+                    tmpList.Add(item);
                 }
                 });
         }
 
         private bool IsExist(string title) {
-            foreach (string i in listBox.Items) {
-                if (i.Contains(title))
+            foreach (Chann i in innerList) {
+                if (string.Compare(i.Title,title) == 0)
                     return true;
             }
             return false;
