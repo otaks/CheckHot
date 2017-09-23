@@ -39,8 +39,8 @@ namespace WpfApp1 {
         private async void button_Click(object sender, RoutedEventArgs e) {
             innerList.Clear();
             listBox.Items.Clear();
-            await UpdateList("http://live.nicovideo.jp/recent?tab=common#/start_time/desc/1");
-            await UpdateList("http://live.nicovideo.jp/recent?tab=common#/start_time/desc/2"); 
+            await UpdateList("http://live.nicovideo.jp/realtimerecentonairstreams?sort=start_time&tab=common&page=1&order=desc&tags=&tk");
+            await UpdateList("http://live.nicovideo.jp/realtimerecentonairstreams?sort=start_time&tab=common&page=2&order=desc&tags=&tk"); 
 
             innerList.ForEach(item => {
                 listBox.Items.Add(item.Title + "\n" + item.AudienceNum + "\n" + item.CommentNum);
@@ -55,7 +55,7 @@ namespace WpfApp1 {
                 doc = await parser.ParseAsync(stream);
             }
 
-            var listItems = doc.QuerySelectorAll("#onair_stream_list > ul.user-programs > li").Select(n => {
+            var listItems = doc.QuerySelectorAll("html > body > ul.user-programs > li").Select(n => {
                 var title = n.Attributes["title"].Value;
                 var status = n.QuerySelectorAll("a > ul > li");
                 var audienceNum = status[0].QuerySelectorAll("span")[1].TextContent;
