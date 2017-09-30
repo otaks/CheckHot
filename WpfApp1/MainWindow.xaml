@@ -5,11 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="439.143" Width="331.857">
-    <Grid>
+        Title="MainWindow" Height="525.714" Width="331.857">
+    <Grid Margin="0,0,0.286,21.286">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="29" Margin="10,382,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
+
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="358" Margin="10,10,0,0" VerticalAlignment="Top" Width="306" MouseDoubleClick="listBox_MouseDoubleClick"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,373,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="157,373,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <TextBox x:Name="UIAudienceNum" HorizontalAlignment="Left" Height="23" Margin="117,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="246,438,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Label Content="来場者数" HorizontalAlignment="Left" Margin="54,383,0,0" VerticalAlignment="Top"/>
+        <Label Content="コメント数" HorizontalAlignment="Left" Margin="185,382,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="UICommentNum" HorizontalAlignment="Left" Height="23" Margin="246,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <Label Content="閾値" HorizontalAlignment="Left" Margin="10,381,0,0" VerticalAlignment="Top"/>
+        <Label Content="タイマーMAX(分)" HorizontalAlignment="Left" Margin="10,416,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="UITimerMAX" HorizontalAlignment="Left" Height="26" Margin="104,416,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="58"/>
+        <RadioButton Content="有" HorizontalAlignment="Left" Height="22" Margin="104,453,0,0" VerticalAlignment="Top" Width="34"/>
+        <Label Content="通知ポップアップ" HorizontalAlignment="Left" Margin="10,447,0,0" VerticalAlignment="Top" Width="89"/>
+        <RadioButton Content="無" HorizontalAlignment="Left" Margin="148,453,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
