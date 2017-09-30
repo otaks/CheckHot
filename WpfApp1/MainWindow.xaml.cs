@@ -63,7 +63,7 @@ namespace WpfApp1 {
                 var audienceNum = status[0].QuerySelectorAll("span")[1].TextContent;
                 var commentNum = status[1].QuerySelectorAll("span")[1].TextContent;
                 var url = n.QuerySelector("a").Attributes["href"].Value;
-                if ((audienceNum != "--") && (int.Parse(audienceNum) >= 25) && (!IsExist(title))) {
+                if (IsFulfillAddRequirements(title, audienceNum, commentNum)) {
                     return new Chann { Title = title, AudienceNum = audienceNum, CommentNum = commentNum, Url = url };
                 } else {
                     return new Chann { Title = "@", AudienceNum = "@", CommentNum = "@", Url = "@" };
@@ -75,6 +75,14 @@ namespace WpfApp1 {
                     tmpList.Add(item);
                 }
                 });
+        }
+
+        //追加要件を満たすか
+        private bool IsFulfillAddRequirements(string title, string audienceNum, string commentNum) {
+            return (audienceNum != "--") &&
+                                (int.Parse(audienceNum) >= int.Parse(UIAudienceNum.Text)) &&
+                                (int.Parse(commentNum) >= int.Parse(UICommentNum.Text)) &&
+                                (!IsExist(title));
         }
 
         private bool IsExist(string title) {

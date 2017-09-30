@@ -10,11 +10,11 @@
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="29" Margin="10,382,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
 
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="358" Margin="10,10,0,0" VerticalAlignment="Top" Width="306" MouseDoubleClick="listBox_MouseDoubleClick"/>
-        <TextBox x:Name="UIAudienceNum" HorizontalAlignment="Left" Height="23" Margin="117,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63"/>
+        <TextBox x:Name="UIAudienceNum" HorizontalAlignment="Left" Height="23" Margin="117,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Text="25"/>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="246,438,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <Label Content="来場者数" HorizontalAlignment="Left" Margin="54,383,0,0" VerticalAlignment="Top"/>
         <Label Content="コメント数" HorizontalAlignment="Left" Margin="185,382,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="UICommentNum" HorizontalAlignment="Left" Height="23" Margin="246,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="UICommentNum" HorizontalAlignment="Left" Height="23" Margin="246,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Text="10"/>
         <Label Content="閾値" HorizontalAlignment="Left" Margin="10,381,0,0" VerticalAlignment="Top"/>
         <Label Content="タイマーMAX(分)" HorizontalAlignment="Left" Margin="10,416,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="UITimerMAX" HorizontalAlignment="Left" Height="26" Margin="104,416,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="58"/>
